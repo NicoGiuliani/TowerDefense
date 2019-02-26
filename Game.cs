@@ -1,13 +1,24 @@
-﻿namespace TowerDefense
+﻿using System;
+
+namespace TowerDefense
 {
     class Game
     {
         static void Main(string[] args)
         {
             Map map = new Map(8, 5);
-            int area = map.Width * map.Height;
-            System.Console.Write($"The area of this map is {area} square units.");
-            System.Console.ReadLine();
+
+            try
+            {
+                MapLocation point1 = new MapLocation(20, 23, map);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("That map location is not on the map.");
+            }
+
+            Console.ReadLine();
+
         }
     }
 }
